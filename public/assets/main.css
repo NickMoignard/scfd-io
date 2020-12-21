@@ -142,6 +142,11 @@ body {
 #poster {
   max-height: 800px;
 }
+@media only screen and (max-width:550px) {
+  #poster {
+    max-height: 125vw;
+  }
+}
 
 .poster-faq {
     font-family: Merchant;
