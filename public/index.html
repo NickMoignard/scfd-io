@@ -27,7 +27,7 @@
        
     
     <div id="loading">
-        <div class="loading"><h1>Skuffage</h1></div>
+        <div class="loading"><h1>Click to Enter</h1></div>
         <svg id="gears-spinner-off" style="position:absolute;left:50%;transform: translateX(-50%)" width="15vw" height="100%" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
             <g transform="translate(50 50)">
                 <g transform="translate(-19 -19) scale(0.6)">
@@ -142,7 +142,7 @@
         }
         .loading h1 {
             display:inline-block;
-            bottom: 0;
+            top: 0;
             position:absolute;
             left:10px;
             /*   text-align:center; */
@@ -208,13 +208,20 @@
         //     $(this).addClass('fixer');
         //     $(this).attr("poster", "/img/loading.gif");
         // });
-        $('#loading').hide();
+
+        $('body').click(()=> {
+            $('#loading').hide();
+            document.getElementById('poster').play();
+        });
         $('#poster').on('canplay', function (event) {
             console.log('poster can play')
             
             $(this).removeClass('fixer');
             $(this).removeAttr("poster");
-        });
+        });            
+
+        
+        
     });
    
 </script>
